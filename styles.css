@@ -818,3 +818,24 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+/* counter CSS */
+.visitor-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  
+  .visitor-counter i {
+    color: var(--primary-color);
+  }
+  
+  .visitor-counter #visitor-count {
+    font-weight: bold;
+    color: var(--primary-color);
+  }

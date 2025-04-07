@@ -103,7 +103,7 @@ function type() {
     }
 }
 
-// Start typing effect when page loads
+
 window.addEventListener('load', () => {
     setTimeout(type, 500);
 });
@@ -112,4 +112,29 @@ let index = 0;
 setInterval(() => {
     document.title = titles[index];
     index = (index + 1) % titles.length;
-}, 2000); // Changes every 2 seconds
+}, 2000);
+
+//counter script
+document.addEventListener('DOMContentLoaded', function () {
+
+    let count = localStorage.getItem('visitorCount');
+
+    if (!count) {
+        count = 1;
+    } else {
+        count = parseInt(count) + 1;
+    }
+
+    localStorage.setItem('visitorCount', count);
+
+    document.getElementById('visitor-count').textContent = count.toLocaleString();
+});
+
+// year section
+document.addEventListener('DOMContentLoaded', function () {
+    const currentYear = new Date().getFullYear();
+    const copyrightElement = document.querySelector('.footer-copy');
+    if (copyrightElement) {
+        copyrightElement.textContent = `© ${currentYear} Aman Kumar. All rights reserved.`;
+    }
+});
